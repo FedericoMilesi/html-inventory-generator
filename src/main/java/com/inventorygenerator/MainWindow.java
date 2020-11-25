@@ -56,6 +56,206 @@ public class MainWindow extends javax.swing.JFrame {
         image = new InputStream[9];
 	this.imageLoader = new ImageLoader(this);
     }
+	
+    public void addItem(int index, Item item) {
+        items.add(index, item);
+    }
+    
+    public int getColorsNumber() {
+        return colorsNumber;
+    }
+    
+    public int getBackgroundNumber() {
+        return backgroundNumber;
+    }
+	
+    public void setLogo(File logo) {
+        this.logo = logo;
+    }
+    
+    public Item getItem(int index) {
+        return items.get(index);
+    }
+	
+    public String getDirectory() {
+        return directory;
+    }
+    
+    public void setItemAdded(boolean itemAdded, int index) {
+        this.itemAdded[index] = itemAdded;
+    }
+    
+    public void setPositionOfRegisterText(int position) {
+        this.positionOfRegisterText = position;
+    }
+    
+    public void setColorsNumber(int index) {
+        colorsNumber = index;
+    }
+    
+    public void setBackgroundNumber(int index) {
+        backgroundNumber = index;
+    }
+    
+    public void setItem(int index, Item item) {
+        items.set(index, item);
+    }
+    
+    public void openItemWindow(int index) {
+        setEnabled(false);
+        itemWindows.set(index, new ItemWindow(this, true, itemAdded[index], index));
+    }
+    
+    public ColorsWindow openColorsWindow() {
+        setEnabled(false);
+        return new ColorsWindow(this, true);
+    }
+    
+    public BackgroundsWindow openBackgroundsWindow() {
+        setEnabled(false);
+        return new BackgroundsWindow(this, true);
+    }
+	
+    public ErrorWindow1 openErrorWindow() {
+        setEnabled(false);
+        return new ErrorWindow1(this, true);
+    }
+    
+    public void changeItemButtonState(int index, boolean state) {
+        switch(index) {
+            case 1: Item2Button.setEnabled(state);
+                    break;
+            case 2: Item3Button.setEnabled(state);
+                    break;
+            case 3: Item4Button.setEnabled(state);
+                    break;
+            case 4: Item5Button.setEnabled(state);
+                    break;
+            case 5: Item6Button.setEnabled(state);
+                    break;
+            case 6: Item7Button.setEnabled(state);
+                    break;
+            case 7: Item8Button.setEnabled(state);
+                    break;
+            case 8: Item9Button.setEnabled(state);
+                    break;
+        }
+    }
+    
+    public void changeItemStateText(String text, int index) {
+        switch(index) {
+            case 0: Item1Button.setText(text);
+                    break;
+            case 1: Item2Button.setText(text);
+                    break;
+            case 2: Item3Button.setText(text);
+                    break;
+            case 3: Item4Button.setText(text);
+                    break;
+            case 4: Item5Button.setText(text);
+                    break;
+            case 5: Item6Button.setText(text);
+                    break;
+            case 6: Item7Button.setText(text);
+                    break;
+            case 7: Item8Button.setText(text);
+                    break;
+            case 8: Item9Button.setText(text);
+                    break;
+            default: break;
+        }
+    }
+        
+    public boolean checkCompanyData() {
+        boolean condition1 = true, condition2 = true, condition3 = true; 
+        if(InventoryNameField.getText().equals("")) {
+            condition1 = false;
+        }
+        int emptyItems = 0;
+        for(Item item : items) {
+            if(item == null) {
+                emptyItems++;
+            }
+        }
+        if(emptyItems == 9) {
+            condition2 = false;
+        }
+        if(CompanyField.getText().equals("")) {
+            condition3 = false;
+        }
+        return !(!condition1 || !condition2 || !condition3);
+    }
+    
+    public void createPage() {
+        company = new Company(CompanyField.getText(), AdressField.getText(), WebPageField.getText(), EmailField.getText(), WANumberField.getText(), InventoryNameField.getText(), logo);
+            try {
+                File pagina = new File(directory + "/inventory.html");
+                FileWriter fstream = new FileWriter(pagina);
+                PageWriter pageWriter = new PageWriter(company, items, new BufferedWriter(fstream));
+                pageWriter.writePage();
+		background[0] = getClass().getResourceAsStream("/background1.jpg");
+		background[1] = getClass().getResourceAsStream("/background2.jpg");
+		background[2] = getClass().getResourceAsStream("/background3.jpg");
+		background[3] = getClass().getResourceAsStream("/background4.jpg");
+		background[4] = getClass().getResourceAsStream("/background5.jpg");
+		background[5] = getClass().getResourceAsStream("/background6.jpg");
+		background[6] = getClass().getResourceAsStream("/background7.jpg");
+		background[7] = getClass().getResourceAsStream("/background8.jpg");
+		background[8] = getClass().getResourceAsStream("/background9.jpg");
+		background[9] = getClass().getResourceAsStream("/background10.jpg");
+		background[10] = getClass().getResourceAsStream("/background11.jpg");
+		background[11] = getClass().getResourceAsStream("/background12.jpg");
+                css[0] = getClass().getResourceAsStream("/inventory.css");
+		css[1] = getClass().getResourceAsStream("/style.css");
+		image[0] = getClass().getResourceAsStream("/img0001.png");
+		image[1] = getClass().getResourceAsStream("/img0002.png");
+		image[2] = getClass().getResourceAsStream("/img0003.png");
+		image[3] = getClass().getResourceAsStream("/img0009.png");
+		image[4] = getClass().getResourceAsStream("/img0006.png");
+		image[5] = getClass().getResourceAsStream("/img0004.png");
+		image[6] = getClass().getResourceAsStream("/img0010.png");
+		image[7] = getClass().getResourceAsStream("/img0007.png");
+		image[8] = getClass().getResourceAsStream("/wsapp.jpg");
+                dest[0] = new File(directory + "/inventory.css");
+		dest[1] = new File(directory + "/style.css");
+		dest[2] = new File(directory + "/images/background.jpg");
+		dest[3] = new File(directory + "/images/img0001.png");
+		dest[4] = new File(directory + "/images/img0002.png");
+		dest[5] = new File(directory + "/images/img0003.png");
+		dest[6] = new File(directory + "/images/img0004.png");
+		dest[7] = new File(directory + "/images/wsapp.jpg");
+                try {
+                    FileUtils.copyToFile(css[0], dest[0]);
+                    FileUtils.copyToFile(css[1], dest[1]);
+                    FileUtils.copyToFile(background[backgroundNumber - 1], dest[2]);
+                    FileUtils.copyToFile(image[0], dest[3]);
+                    FileUtils.copyToFile(image[1], dest[4]);
+                    FileUtils.copyToFile(image[colorsNumber + 1], dest[5]);
+                    FileUtils.copyToFile(image[colorsNumber + 4], dest[6]);
+                    FileUtils.copyToFile(image[8], dest[7]);
+                } catch (IOException e) {
+                    e.printStackTrace(System.err);
+                }
+                writeTextToRegister("Page file (inventory.html) succesfully "
+                        + "generated.");
+            } catch (IOException e) {
+                System.err.println("Error: " + e.getMessage());
+            }
+    }
+    
+    public final void writeTextToRegister(String text) {
+        if(positionOfRegisterText == 0) {
+            Register.insert(text, positionOfRegisterText);
+            int position = positionOfRegisterText + text.length();
+            setPositionOfRegisterText(position);
+        }
+        else {
+            Register.insert("\n" + text, positionOfRegisterText);
+            int position = positionOfRegisterText + text.length() + 1;
+            setPositionOfRegisterText(position);
+        } 
+    }
+	
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -488,205 +688,6 @@ public class MainWindow extends javax.swing.JFrame {
     private void ChangeColorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeColorsButtonActionPerformed
         openColorsWindow();
     }//GEN-LAST:event_ChangeColorsButtonActionPerformed
-    
-    public void addItem(int index, Item item) {
-        items.add(index, item);
-    }
-    
-    public int getColorsNumber() {
-        return colorsNumber;
-    }
-    
-    public int getBackgroundNumber() {
-        return backgroundNumber;
-    }
-	
-    public void setLogo(File logo) {
-        this.logo = logo;
-    }
-    
-    public Item getItem(int index) {
-        return items.get(index);
-    }
-	
-    public String getDirectory() {
-        return directory;
-    }
-    
-    public void setItemAdded(boolean itemAdded, int index) {
-        this.itemAdded[index] = itemAdded;
-    }
-    
-    public void setPositionOfRegisterText(int position) {
-        this.positionOfRegisterText = position;
-    }
-    
-    public void setColorsNumber(int index) {
-        colorsNumber = index;
-    }
-    
-    public void setBackgroundNumber(int index) {
-        backgroundNumber = index;
-    }
-    
-    public void setItem(int index, Item item) {
-        items.set(index, item);
-    }
-    
-    public void openItemWindow(int index) {
-        setEnabled(false);
-        itemWindows.set(index, new ItemWindow(this, true, itemAdded[index], index));
-    }
-    
-    public ColorsWindow openColorsWindow() {
-        setEnabled(false);
-        return new ColorsWindow(this, true);
-    }
-    
-    public BackgroundsWindow openBackgroundsWindow() {
-        setEnabled(false);
-        return new BackgroundsWindow(this, true);
-    }
-	
-    public ErrorWindow1 openErrorWindow() {
-        setEnabled(false);
-        return new ErrorWindow1(this, true);
-    }
-    
-    public void changeItemButtonState(int index, boolean state) {
-        switch(index) {
-            case 1: Item2Button.setEnabled(state);
-                    break;
-            case 2: Item3Button.setEnabled(state);
-                    break;
-            case 3: Item4Button.setEnabled(state);
-                    break;
-            case 4: Item5Button.setEnabled(state);
-                    break;
-            case 5: Item6Button.setEnabled(state);
-                    break;
-            case 6: Item7Button.setEnabled(state);
-                    break;
-            case 7: Item8Button.setEnabled(state);
-                    break;
-            case 8: Item9Button.setEnabled(state);
-                    break;
-        }
-    }
-    
-    public void changeItemStateText(String text, int index) {
-        switch(index) {
-            case 0: Item1Button.setText(text);
-                    break;
-            case 1: Item2Button.setText(text);
-                    break;
-            case 2: Item3Button.setText(text);
-                    break;
-            case 3: Item4Button.setText(text);
-                    break;
-            case 4: Item5Button.setText(text);
-                    break;
-            case 5: Item6Button.setText(text);
-                    break;
-            case 6: Item7Button.setText(text);
-                    break;
-            case 7: Item8Button.setText(text);
-                    break;
-            case 8: Item9Button.setText(text);
-                    break;
-            default: break;
-        }
-    }
-        
-    public boolean checkCompanyData() {
-        boolean condition1 = true, condition2 = true, condition3 = true; 
-        if(InventoryNameField.getText().equals("")) {
-            condition1 = false;
-        }
-        int emptyItems = 0;
-        for(Item item : items) {
-            if(item == null) {
-                emptyItems++;
-            }
-        }
-        if(emptyItems == 9) {
-            condition2 = false;
-        }
-        if(CompanyField.getText().equals("")) {
-            condition3 = false;
-        }
-        return !(!condition1 || !condition2 || !condition3);
-    }
-    
-    public void createPage() {
-        company = new Company(CompanyField.getText(), AdressField.getText(), WebPageField.getText(), EmailField.getText(), WANumberField.getText(), InventoryNameField.getText(), logo);
-            try {
-                File pagina = new File(directory + "/inventory.html");
-                FileWriter fstream = new FileWriter(pagina);
-                PageWriter pageWriter = new PageWriter(company, items, new BufferedWriter(fstream));
-                pageWriter.writePage();
-		background[0] = getClass().getResourceAsStream("/background1.jpg");
-		background[1] = getClass().getResourceAsStream("/background2.jpg");
-		background[2] = getClass().getResourceAsStream("/background3.jpg");
-		background[3] = getClass().getResourceAsStream("/background4.jpg");
-		background[4] = getClass().getResourceAsStream("/background5.jpg");
-		background[5] = getClass().getResourceAsStream("/background6.jpg");
-		background[6] = getClass().getResourceAsStream("/background7.jpg");
-		background[7] = getClass().getResourceAsStream("/background8.jpg");
-		background[8] = getClass().getResourceAsStream("/background9.jpg");
-		background[9] = getClass().getResourceAsStream("/background10.jpg");
-		background[10] = getClass().getResourceAsStream("/background11.jpg");
-		background[11] = getClass().getResourceAsStream("/background12.jpg");
-                css[0] = getClass().getResourceAsStream("/inventory.css");
-		css[1] = getClass().getResourceAsStream("/style.css");
-		image[0] = getClass().getResourceAsStream("/img0001.png");
-		image[1] = getClass().getResourceAsStream("/img0002.png");
-		image[2] = getClass().getResourceAsStream("/img0003.png");
-		image[3] = getClass().getResourceAsStream("/img0009.png");
-		image[4] = getClass().getResourceAsStream("/img0006.png");
-		image[5] = getClass().getResourceAsStream("/img0004.png");
-		image[6] = getClass().getResourceAsStream("/img0010.png");
-		image[7] = getClass().getResourceAsStream("/img0007.png");
-		image[8] = getClass().getResourceAsStream("/wsapp.jpg");
-                dest[0] = new File(directory + "/inventory.css");
-		dest[1] = new File(directory + "/style.css");
-		dest[2] = new File(directory + "/images/background.jpg");
-		dest[3] = new File(directory + "/images/img0001.png");
-		dest[4] = new File(directory + "/images/img0002.png");
-		dest[5] = new File(directory + "/images/img0003.png");
-		dest[6] = new File(directory + "/images/img0004.png");
-		dest[7] = new File(directory + "/images/wsapp.jpg");
-                try {
-                    FileUtils.copyToFile(css[0], dest[0]);
-                    FileUtils.copyToFile(css[1], dest[1]);
-                    FileUtils.copyToFile(background[backgroundNumber - 1], dest[2]);
-                    FileUtils.copyToFile(image[0], dest[3]);
-                    FileUtils.copyToFile(image[1], dest[4]);
-                    FileUtils.copyToFile(image[colorsNumber + 1], dest[5]);
-                    FileUtils.copyToFile(image[colorsNumber + 4], dest[6]);
-                    FileUtils.copyToFile(image[8], dest[7]);
-                } catch (IOException e) {
-                    e.printStackTrace(System.err);
-                }
-                writeTextToRegister("Page file (inventory.html) succesfully "
-                        + "generated.");
-            } catch (IOException e) {
-                System.err.println("Error: " + e.getMessage());
-            }
-    }
-    
-    public final void writeTextToRegister(String text) {
-        if(positionOfRegisterText == 0) {
-            Register.insert(text, positionOfRegisterText);
-            int position = positionOfRegisterText + text.length();
-            setPositionOfRegisterText(position);
-        }
-        else {
-            Register.insert("\n" + text, positionOfRegisterText);
-            int position = positionOfRegisterText + text.length() + 1;
-            setPositionOfRegisterText(position);
-        } 
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AdressField;
