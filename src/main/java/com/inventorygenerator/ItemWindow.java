@@ -36,6 +36,67 @@ public class ItemWindow extends javax.swing.JFrame {
         }
 	this.imageLoader = new ImageLoader(mainWindow, this);
     }
+
+    public void setImage(File image) {
+        this.image = image;
+    }
+	
+    public void closeWindow() {
+        mainWindow.requestFocus();
+        mainWindow.setEnabled(true);
+        setVisible(false);
+    }
+        
+    public void deleteItem() {
+        if(mainWindow.getItem(itemNumber) == null) {
+            setEnabled(false);
+            openErrorWindow3();
+        }
+        else {
+            mainWindow.writeTextToRegister("Item N° " + (itemNumber + 1) 
+                    + " deleted.");
+            mainWindow.changeItemStateText("Add", itemNumber);
+            itemAdded = false;
+            mainWindow.setItemAdded(false, itemNumber);
+            NameField.setText("");
+            Field1.setText("");
+            Field2.setText("");
+            Field3.setText("");
+            Field4.setText("");
+            Field5.setText("");
+            PriceField.setText("");
+            this.image = null;
+            mainWindow.setItem(itemNumber, null);
+        }
+    }
+    
+    public void addItem() {
+        if(itemAdded == false) {
+            mainWindow.writeTextToRegister("Item N° " + (itemNumber + 1) 
+                    + " added.");
+            mainWindow.changeItemStateText("Change", itemNumber);
+            itemAdded = true;
+            mainWindow.setItemAdded(true, itemNumber);
+        }
+        else {
+            mainWindow.writeTextToRegister("Item N° " + (itemNumber + 1) 
+                    + " changed.");
+        }
+        mainWindow.setItem(itemNumber, new Item(NameField.getText(), 
+                Field1.getText(), Field2.getText(), Field3.getText(), 
+                Field4.getText(), Field5.getText(), PriceField.getText(), image));
+    }
+	
+    public ErrorWindow2 openErrorWindow2() {
+        setEnabled(false);
+        return new ErrorWindow2(mainWindow, this, true);
+    }
+    
+    public ErrorWindow3 openErrorWindow3() {
+        setEnabled(false);
+        return new ErrorWindow3(mainWindow, this, true);
+    }
+	
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -233,66 +294,6 @@ public class ItemWindow extends javax.swing.JFrame {
     private void LoadImageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadImageButtonActionPerformed
         imageLoader.uploadImage();
     }//GEN-LAST:event_LoadImageButtonActionPerformed
-    
-    public void setImage(File image) {
-        this.image = image;
-    }
-	
-    public void closeWindow() {
-        mainWindow.requestFocus();
-        mainWindow.setEnabled(true);
-        setVisible(false);
-    }
-        
-    public void deleteItem() {
-        if(mainWindow.getItem(itemNumber) == null) {
-            setEnabled(false);
-            openErrorWindow3();
-        }
-        else {
-            mainWindow.writeTextToRegister("Item N° " + (itemNumber + 1) 
-                    + " deleted.");
-            mainWindow.changeItemStateText("Add", itemNumber);
-            itemAdded = false;
-            mainWindow.setItemAdded(false, itemNumber);
-            NameField.setText("");
-            Field1.setText("");
-            Field2.setText("");
-            Field3.setText("");
-            Field4.setText("");
-            Field5.setText("");
-            PriceField.setText("");
-            this.image = null;
-            mainWindow.setItem(itemNumber, null);
-        }
-    }
-    
-    public void addItem() {
-        if(itemAdded == false) {
-            mainWindow.writeTextToRegister("Item N° " + (itemNumber + 1) 
-                    + " added.");
-            mainWindow.changeItemStateText("Change", itemNumber);
-            itemAdded = true;
-            mainWindow.setItemAdded(true, itemNumber);
-        }
-        else {
-            mainWindow.writeTextToRegister("Item N° " + (itemNumber + 1) 
-                    + " changed.");
-        }
-        mainWindow.setItem(itemNumber, new Item(NameField.getText(), 
-                Field1.getText(), Field2.getText(), Field3.getText(), 
-                Field4.getText(), Field5.getText(), PriceField.getText(), image));
-    }
-	
-    public ErrorWindow2 openErrorWindow2() {
-        setEnabled(false);
-        return new ErrorWindow2(mainWindow, this, true);
-    }
-    
-    public ErrorWindow3 openErrorWindow3() {
-        setEnabled(false);
-        return new ErrorWindow3(mainWindow, this, true);
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
