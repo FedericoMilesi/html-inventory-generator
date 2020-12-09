@@ -40,43 +40,8 @@ public class BackgroundsWindow extends javax.swing.JFrame {
     }
     
     public final void changeBackground() {
-        switch(backgroundNumber) {
-            case 1:  CurrentBackgroundText.setText("BACKGROUND #1");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background1-thumbnail.png")));
-                     break;
-            case 2:  CurrentBackgroundText.setText("BACKGROUND #2");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background2-thumbnail.png")));
-                     break;
-            case 3:  CurrentBackgroundText.setText("BACKGROUND #3");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background3-thumbnail.png")));
-                     break;
-            case 4:  CurrentBackgroundText.setText("BACKGROUND #4");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background4-thumbnail.png")));
-                     break;
-            case 5:  CurrentBackgroundText.setText("BACKGROUND #5");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background5-thumbnail.png")));
-                     break;
-            case 6:  CurrentBackgroundText.setText("BACKGROUND #6");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background6-thumbnail.png")));
-                     break;
-            case 7:  CurrentBackgroundText.setText("BACKGROUND #7");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background7-thumbnail.png")));
-                     break;
-            case 8:  CurrentBackgroundText.setText("BACKGROUND #8");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background8-thumbnail.png")));
-                     break;
-            case 9:  CurrentBackgroundText.setText("BACKGROUND #9");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background9-thumbnail.png")));
-                     break;
-            case 10: CurrentBackgroundText.setText("BACKGROUND #10");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background10-thumbnail.png")));
-                     break;
-            case 11: CurrentBackgroundText.setText("BACKGROUND #11");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background11-thumbnail.png")));
-                     break;
-            case 12: CurrentBackgroundText.setText("BACKGROUND #12");
-                     CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background12-thumbnail.png")));
-                     break;
+         CurrentBackgroundText.setText("BACKGROUND #" + backgroundNumber);
+         CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background" + backgroundNumber + "-thumbnail.png")));
         }
     }
     
