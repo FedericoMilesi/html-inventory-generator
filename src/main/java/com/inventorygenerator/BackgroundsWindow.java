@@ -42,7 +42,6 @@ public class BackgroundsWindow extends javax.swing.JFrame {
     public final void changeBackground() {
          CurrentBackgroundText.setText("BACKGROUND #" + backgroundNumber);
          CurrentBackgroundThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background" + backgroundNumber + "-thumbnail.png")));
-        }
     }
     
     @SuppressWarnings("unchecked")
