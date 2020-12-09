@@ -12,6 +12,38 @@ public class ColorsWindow extends javax.swing.JFrame {
         setLocationRelativeTo(mainWindow);
         setVisible(visibility);
     }
+    
+    public void displayNextColors() {
+        if(colorsNumber == 3) {
+            colorsNumber = 1;
+        }
+        else {
+            colorsNumber++;
+        }
+        changeColors();
+    }
+    
+    public void displayPreviousColors() {
+        if(colorsNumber == 1) {
+            colorsNumber = 3;
+        }
+        else {
+            colorsNumber--;
+        }
+        changeColors();
+    }
+    
+    public void closeWindow() {
+        mainWindow.requestFocus();
+        mainWindow.setEnabled(true);
+        setVisible(false);
+    }
+    
+    public final void changeColors() {
+        CurrentColorsText.setText("COLORS #" + colorsNumber);
+        CurrentColorsThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/colors" + colorsNumber + ".png")));
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -125,37 +157,6 @@ public class ColorsWindow extends javax.swing.JFrame {
     private void NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButtonActionPerformed
         displayNextColors();
     }//GEN-LAST:event_NextButtonActionPerformed
-
-    public void displayNextColors() {
-        if(colorsNumber == 3) {
-            colorsNumber = 1;
-        }
-        else {
-            colorsNumber++;
-        }
-        changeColors();
-    }
-    
-    public void displayPreviousColors() {
-        if(colorsNumber == 1) {
-            colorsNumber = 3;
-        }
-        else {
-            colorsNumber--;
-        }
-        changeColors();
-    }
-    
-    public void closeWindow() {
-        mainWindow.requestFocus();
-        mainWindow.setEnabled(true);
-        setVisible(false);
-    }
-    
-    public final void changeColors() {
-        CurrentColorsText.setText("COLORS #" + colorsNumber);
-        CurrentColorsThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/colors" + colorsNumber + ".png")));
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
