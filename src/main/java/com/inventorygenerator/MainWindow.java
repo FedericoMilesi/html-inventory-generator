@@ -45,8 +45,6 @@ public class MainWindow extends javax.swing.JFrame {
 	directory2 = new File(directory + "/images");
         if(!directory1.isDirectory()) {
             directory1.mkdir();
-        }
-        if(!directory2.isDirectory()) {
             directory2.mkdir();
             writeTextToRegister("\"HTML Inventory Generator\" folder succesfully created in " + directory.replace("/HTML Inventory Generator", "") + " directory.");
         }
