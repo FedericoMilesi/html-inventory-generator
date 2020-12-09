@@ -155,7 +155,6 @@ public class ColorsWindow extends javax.swing.JFrame {
     public final void changeColors() {
         CurrentColorsText.setText("COLORS #" + colorsNumber);
         CurrentColorsThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/colors" + colorsNumber + ".png")));
-        }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
