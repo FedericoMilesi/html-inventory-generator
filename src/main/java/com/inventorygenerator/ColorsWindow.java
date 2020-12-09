@@ -153,16 +153,8 @@ public class ColorsWindow extends javax.swing.JFrame {
     }
     
     public final void changeColors() {
-        switch(colorsNumber) {
-            case 1:  CurrentColorsText.setText("COLORS #1");
-                     CurrentColorsThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/colors1.png")));
-                     break;
-            case 2:  CurrentColorsText.setText("COLORS #2");
-                     CurrentColorsThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/colors2.png")));
-                     break;
-            case 3:  CurrentColorsText.setText("COLORS #3");
-                     CurrentColorsThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/colors3.png")));
-                     break;
+        CurrentColorsText.setText("COLORS #" + colorsNumber);
+        CurrentColorsThumbnail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/colors" + colorsNumber + ".png")));
         }
     }
     
