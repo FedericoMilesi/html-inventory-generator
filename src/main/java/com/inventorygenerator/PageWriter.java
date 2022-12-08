@@ -124,7 +124,7 @@ public class PageWriter {
             inventory.write("<div class=\"div\">");
             inventory.newLine();
             if(!company.getWsappNumber().equals("")) {
-                inventory.write("<img src=\"img/wsapp.png\" height=\"30\" width=\"30\" alt=\"\" class=\"ico-wsap\"/>");
+                inventory.write("<img src=\"images/wsapp.png\" height=\"30\" width=\"30\" alt=\"\" class=\"ico-wsap\"/>");
                 inventory.newLine();
                 inventory.write("</div>");
                 inventory.newLine();
