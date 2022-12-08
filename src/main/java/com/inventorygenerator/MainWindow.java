@@ -212,14 +212,14 @@ public class MainWindow extends javax.swing.JFrame {
 		image[5] = getClass().getResourceAsStream("/img0004.png");
 		image[6] = getClass().getResourceAsStream("/img0010.png");
 		image[7] = getClass().getResourceAsStream("/img0007.png");
-		image[8] = getClass().getResourceAsStream("/wsapp.jpg");
+		image[8] = getClass().getResourceAsStream("/wsapp.png");
                 dest[0] = new File(directory + "/main.css");
 		dest[1] = new File(directory + "/images/background.jpg");
 		dest[2] = new File(directory + "/images/img0001.png");
 		dest[3] = new File(directory + "/images/img0002.png");
 		dest[4] = new File(directory + "/images/img0003.png");
 		dest[5] = new File(directory + "/images/img0004.png");
-		dest[6] = new File(directory + "/images/wsapp.jpg");
+		dest[6] = new File(directory + "/images/wsapp.png");
                 try {
                     FileUtils.copyToFile(css[0], dest[0]);
                     FileUtils.copyToFile(background[backgroundNumber - 1], dest[1]);
