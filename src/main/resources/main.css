@@ -4,7 +4,7 @@ body {
       rgba(255, 255, 255, 0.2),
       rgba(255, 255, 255, 0.2)
     ),
-    url("img/background.jpg");
+    url("images/background.jpg");
   background-attachment: scroll;
   background-repeat: cover;
   margin: 0;
