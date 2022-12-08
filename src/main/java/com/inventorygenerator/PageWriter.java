@@ -84,7 +84,7 @@ public class PageWriter {
             inventory.newLine();
             inventory.write("<div class=\"card-img\">");
             inventory.newLine();
-            inventory.write("<img src=\"img/" + items.get(itemNumber).getImage().getName() + "\" alt=\"\" class=\"item-img\" />");
+            inventory.write("<img src=\"images/" + items.get(itemNumber).getImage().getName() + "\" alt=\"\" class=\"item-img\" />");
             inventory.newLine();
             inventory.write("</div>");
             inventory.newLine();
