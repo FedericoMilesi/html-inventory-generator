@@ -24,8 +24,7 @@ public class MainWindow extends javax.swing.JFrame {
     private final File directory2;
     private final File[] dest;
     private final InputStream[] background;
-    private final InputStream[] css;
-    private final InputStream[] image;
+    private final InputStream[] pageFiles;
     private final ImageLoader imageLoader;
     public MainWindow() {
         initComponents();
@@ -48,10 +47,9 @@ public class MainWindow extends javax.swing.JFrame {
             directory2.mkdir();
             writeTextToRegister("\"HTML Inventory Generator\" folder succesfully created in " + directory.replace("/HTML Inventory Generator", "") + " directory.");
         }
-	dest = new File[7];
+	dest = new File[3];
 	background = new InputStream[12];
-        css = new InputStream[1];
-        image = new InputStream[9];
+        pageFiles = new InputStream[2];
 	this.imageLoader = new ImageLoader(this);
     }
 	
@@ -203,31 +201,15 @@ public class MainWindow extends javax.swing.JFrame {
 		background[9] = getClass().getResourceAsStream("/background10.jpg");
 		background[10] = getClass().getResourceAsStream("/background11.jpg");
 		background[11] = getClass().getResourceAsStream("/background12.jpg");
-                css[0] = getClass().getResourceAsStream("/main.css");
-		image[0] = getClass().getResourceAsStream("/img0001.png");
-		image[1] = getClass().getResourceAsStream("/img0002.png");
-		image[2] = getClass().getResourceAsStream("/img0003.png");
-		image[3] = getClass().getResourceAsStream("/img0009.png");
-		image[4] = getClass().getResourceAsStream("/img0006.png");
-		image[5] = getClass().getResourceAsStream("/img0004.png");
-		image[6] = getClass().getResourceAsStream("/img0010.png");
-		image[7] = getClass().getResourceAsStream("/img0007.png");
-		image[8] = getClass().getResourceAsStream("/wsapp.png");
+                pageFiles[0] = getClass().getResourceAsStream("/main.css");
+		pageFiles[1] = getClass().getResourceAsStream("/wsapp.png");
                 dest[0] = new File(directory + "/main.css");
 		dest[1] = new File(directory + "/images/background.jpg");
-		dest[2] = new File(directory + "/images/img0001.png");
-		dest[3] = new File(directory + "/images/img0002.png");
-		dest[4] = new File(directory + "/images/img0003.png");
-		dest[5] = new File(directory + "/images/img0004.png");
-		dest[6] = new File(directory + "/images/wsapp.png");
+		dest[2] = new File(directory + "/images/wsapp.png");
                 try {
-                    FileUtils.copyToFile(css[0], dest[0]);
+                    FileUtils.copyToFile(pageFiles[0], dest[0]);
                     FileUtils.copyToFile(background[backgroundNumber - 1], dest[1]);
-                    FileUtils.copyToFile(image[0], dest[2]);
-                    FileUtils.copyToFile(image[1], dest[3]);
-                    FileUtils.copyToFile(image[colorsNumber + 1], dest[4]);
-                    FileUtils.copyToFile(image[colorsNumber + 4], dest[5]);
-                    FileUtils.copyToFile(image[8], dest[6]);
+                    FileUtils.copyToFile(pageFiles[1], dest[2]);
                 } catch (IOException e) {
                     e.printStackTrace(System.err);
                 }
