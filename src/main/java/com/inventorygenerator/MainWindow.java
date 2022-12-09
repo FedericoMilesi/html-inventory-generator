@@ -663,7 +663,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_Item9ButtonActionPerformed
 
     private void ChangeColorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeColorsButtonActionPerformed
-        openColorsWindow();
+        //openColorsWindow();
     }//GEN-LAST:event_ChangeColorsButtonActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
