@@ -11,7 +11,7 @@ I decided to use Java for the task and the end result was this Netbeans project.
 
 ## Tools and complements used
 
-- Apache NetBeans IDE 11.0
+- Apache NetBeans IDE 15
 - Apache Maven JAR 2.4 (to build JAR from the compiled project)
 - Apache Maven Shade 3.2.1 (to package both the compiled code and required files into a single JAR)
 - Apache Maven Shared Utils 3.2.1 (to import FileUtils class into the project)
