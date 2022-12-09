@@ -142,6 +142,12 @@ public class PageWriter {
                 inventory.newLine();
                 inventory.write("<span class=\"url\">" + company.getWebPage() + "</span>");
                 inventory.newLine();
+            }
+            if(!company.getEmail().equals("")) {
+                inventory.write("<br>");
+                inventory.newLine();
+                inventory.write("<span class=\"url\">" + company.getEmail() + "</span>");
+                inventory.newLine();
                 inventory.write("</div>");
                 inventory.newLine();
             }
