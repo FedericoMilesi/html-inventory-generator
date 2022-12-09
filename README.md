@@ -1,4 +1,4 @@
-# HTML Inventory Generator (BETA)
+# My eSale (BETA)
 
 In June of this year, I was hired by a car parts shop owner to write some software. He needed a desktop program that would allow him to enter car replacements on sale and then have the program automatically create a good looking page with all of the items on display, as well as the shop address, logo and contact info. 
 
