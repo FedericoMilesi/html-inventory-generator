@@ -15,6 +15,8 @@ I decided to use Java for the task and the end result was this Netbeans project.
 - Apache Maven JAR 2.4 (to build JAR from the compiled project)
 - Apache Maven Shade 3.2.1 (to package both the compiled code and required files into a single JAR)
 - Apache Maven Shared Utils 3.2.1 (to import FileUtils class into the project)
+- FindBugs JSR305 3.0.2
+- Plexus :: Default Container 2.1.1
 
 ## Known Issues
 
