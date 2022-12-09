@@ -62,7 +62,7 @@ public class PageWriter {
             if(company.getLogo() != null) {
                 inventory.write("<div class=\"logo\">");
                 inventory.newLine();
-                inventory.write("<img src=\"img/images.png\" alt=\"\" height=\"100px\" width=\"150px\" />");
+                inventory.write("<img src=\"images/" + company.getLogo().getName() + "\" alt=\"\" height=\"100px\" width=\"150px\" />");
                 inventory.newLine();
                 inventory.write("</div>");
                 inventory.newLine();
