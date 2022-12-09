@@ -7,7 +7,7 @@ I decided to use Java for the task and the end result was this Netbeans project.
 ## Screenshots
 
 ![alt text](https://i.imgur.com/7N5TdFWl.png)
-![alt text](https://i.imgur.com/Rwsved6l.png)
+![alt text](https://i.imgur.com/taZHV7G.png)
 
 ## Tools and complements used
 
