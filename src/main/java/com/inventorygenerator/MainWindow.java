@@ -277,7 +277,7 @@ public class MainWindow extends javax.swing.JFrame {
         ExitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("HTML Inventory Generator");
+        setTitle("My eSale");
         setResizable(false);
 
         Item1Text.setText("Item #1");
