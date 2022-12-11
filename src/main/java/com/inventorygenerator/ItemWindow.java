@@ -121,7 +121,7 @@ public class ItemWindow extends javax.swing.JFrame {
         DeleteButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setResizable(false);
 
         NameText.setText("Name");
