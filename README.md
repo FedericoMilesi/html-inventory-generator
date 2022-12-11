@@ -2,9 +2,9 @@
 
 I was once approached by an auto parts business owner, who told me that he needed a program that could allow him to enter his products for sale and then have the software create a page with all of the items on display so that he could share it to customers. I decided to use Java 8 for the job and the result was a Maven project, which was originally in Spanish and tailored for that particular business, but afterwards I translated everything to English and reworked the application so that it could be used for any kind of business and be uploaded here.
  
-## Screenshots
+## Preview Images
 
-![alt text](https://i.imgur.com/7N5TdFWl.png)
+![alt text](https://i.imgur.com/01IfgIU.png)
 ![alt text](https://i.imgur.com/sLeGxLP.png)
 
 ## IDE, Development Kit and Maven Plugins/Dependencies used
