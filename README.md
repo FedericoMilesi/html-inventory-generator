@@ -22,7 +22,6 @@ I decided to use Java for the task and the end result was this Netbeans project.
 ## Known Issues
 
 - Currently there's no option to select another directory to save the page other than the default one.
-- If you want to have everything in a single printable page, it's recommended that you don't enter more than six items for sale if you're also adding contact info, or else everything won't fit in just one page. 
 - Lack of code commentary.
 - There's no limit to the types of characters you can enter on any text field.
 - There's no prompt to overwrite previously generated page files, which might lead to accidental deleting.
