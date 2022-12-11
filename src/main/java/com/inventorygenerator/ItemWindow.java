@@ -43,7 +43,6 @@ public class ItemWindow extends javax.swing.JFrame {
 	
     public void closeWindow() {
         mainWindow.requestFocus();
-        mainWindow.setEnabled(true);
         setVisible(false);
     }
         
