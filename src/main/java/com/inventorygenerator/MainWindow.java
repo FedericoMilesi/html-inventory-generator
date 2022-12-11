@@ -98,7 +98,6 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     public void openItemWindow(int index) {
-        setEnabled(false);
         itemWindows.set(index, new ItemWindow(this, true, itemAdded[index], index));
     }
     
