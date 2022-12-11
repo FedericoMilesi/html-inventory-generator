@@ -9,9 +9,10 @@ I decided to use Java for the task and the end result was this Netbeans project.
 ![alt text](https://i.imgur.com/7N5TdFWl.png)
 ![alt text](https://i.imgur.com/sLeGxLP.png)
 
-## Tools and complements used
+## IDE, Development Kit and Maven Plugins/Dependencies used
 
 - Apache NetBeans IDE 15
+- Java SE Development Kit 8u202
 - Apache Maven JAR 2.4 (to build JAR from the compiled project)
 - Apache Maven Shade 3.2.1 (to package both the compiled code and required files into a single JAR)
 - Apache Maven Shared Utils 3.2.1 (to import FileUtils class into the project)
