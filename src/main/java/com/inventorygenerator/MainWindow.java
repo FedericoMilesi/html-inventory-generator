@@ -39,13 +39,13 @@ public class MainWindow extends javax.swing.JFrame {
         positionOfRegisterText = 0;
         backgroundNumber = 1;
         colorsNumber = 1;
-        directory = FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "/HTML Inventory Generator";
+        directory = FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "/My eSale";
         directory1 = new File(directory);
 	directory2 = new File(directory + "/images");
         if(!directory1.isDirectory()) {
             directory1.mkdir();
             directory2.mkdir();
-            writeTextToRegister("\"HTML Inventory Generator\" folder succesfully created in " + directory.replace("/HTML Inventory Generator", "") + " directory.");
+            writeTextToRegister("\"My eSale\" folder succesfully created in " + directory.replace("/My eSale", "") + " directory.");
         }
 	dest = new File[3];
 	background = new InputStream[12];
